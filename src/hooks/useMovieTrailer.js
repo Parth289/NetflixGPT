@@ -5,11 +5,11 @@
 //             const trailers = json.results.filter((video)=>(video.type === "Trailer"))
 //             setNewTrailers(trailers)
 //             }
-    
+
 //         useEffect(()=>{
 //             getMovieTrailer()
 //         },[])
-    
+
 // }
 
 // export default useMovieTrailer

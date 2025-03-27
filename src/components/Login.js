@@ -35,7 +35,7 @@ const Login = () => {
         password?.current?.value
       )
         .then((userCredential) => {
-          // Signed in 
+          // Signed in
           const user = userCredential.user;
           console.log("registerd", user);
         })

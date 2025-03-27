@@ -19,37 +19,34 @@ const Header = () => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid, email, displayName }));
-        navigate("/browse")
+        navigate("/browse");
       } else {
         dispatch(removeUser());
-        navigate("/")
-
+        navigate("/");
       }
     });
   }, []);
   const handleSignOut = () => {
     //firebase api
     signOut(auth)
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => {});
   };
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
       <div>
         <img
-          className="w-44 mx-auto md:mx-0"
-          src = {AVATAR_URL}
+          className="w-[14rem] mx-auto md:mx-0"
+          src={AVATAR_URL}
           alt="logo"
         />
       </div>
       {user && (
         <div className="flex p-2 justify-between">
-        <img
+          <img
             className="w-10 l-10 m-5"
             alt="logo"
-            src="https://wallpapers.com/images/high/netflix-profile-pictures-1000-x-1000-62wgyitks6f4l79m.
-            "
+            src="https://i.pinimg.com/474x/5b/50/e7/5b50e75d07c726d36f397f6359098f58.jpg"
           />
           <button className="mr-2 text-white font-bold" onClick={handleSignOut}>
             Sign Out{" "}
