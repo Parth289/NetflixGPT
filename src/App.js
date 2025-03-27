@@ -1,9 +1,13 @@
-import './App.css';
+import { Provider } from "react-redux";
+import Body from "./components/Body";
+import Store from "./utiles/Store";
 
 function App() {
   return (
-    <div className="App">
-    <h1 className='bg-slate-500'>Netflix GPT</h1>
+    <div>
+      <Provider store={Store}>
+        <Body />
+      </Provider>
     </div>
   );
 }
