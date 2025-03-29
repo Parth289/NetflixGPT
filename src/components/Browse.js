@@ -10,20 +10,9 @@ import useFetchMovies from "../hooks/useFetchMovies";
 import useFetchPopularMovies from "../hooks/useFetchPopularMovies";
 import useFetchTopRated from "../hooks/useFetchTopRated";
 import useFetchUpcomingMovies from "../hooks/useFetchUpcomingMovies";
+import SearchGpt from "./Inside Browse/GPT/SearchGpt";
 
 const Browse = () => {
-  // const dispatch = useDispatch()
-
-  // const getMovieData = async ()=>{
-  //    const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', TMDB_OPTIONS)
-  //    const json = await data.json()
-  //    console.log(json.results)
-  //    dispatch(addmovies(json.results))
-  //  }
-  //  useEffect(()=>{
-  //    getMovieData();
-  //  },[])
-
   useFetchMovies();
   useFetchPopularMovies();
   useFetchTopRated();
@@ -34,6 +23,7 @@ const Browse = () => {
       <Header />
       <MainContainer />
       <SecondartContainer />
+      <SearchGpt />
     </div>
   );
 };

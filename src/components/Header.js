@@ -42,7 +42,11 @@ const Header = () => {
         />
       </div>
       {user && (
-        <div className="flex p-2 justify-between">
+        <div className="flex p-2 justify-between items-center ">
+          <button className="relative overflow-hidden h-12 bg-gradient-to-r from-blue-600 to-purple-800 text-white px-6 rounded-xl shadow-xl hover:from-blue-700 hover:to-purple-900 transition-all duration-300 before:absolute before:inset-0 before:bg-white/10 before:blur-xl">
+            Search GPT
+          </button>
+
           <img
             className="w-10 l-10 m-5"
             alt="logo"

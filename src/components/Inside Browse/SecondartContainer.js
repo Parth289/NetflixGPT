@@ -8,7 +8,7 @@ const SecondartContainer = () => {
 
   return (
     <div className="bg-black">
-      <div className=" mt-0 md:mt-[-12rem]  relative z-20">
+      <div className=" mt-0 md:mt-[-12rem]  relative">
         <MovieList title={"Now Playing"} movies={movies?.nowPlayingMoview} />
         <MovieList title={"Popular"} movies={movies?.PopularMovie} />
         <MovieList title={"Top Rated"} movies={movies?.TopRatedMovie} />
@@ -20,21 +20,3 @@ const SecondartContainer = () => {
 };
 
 export default SecondartContainer;
-// /
-
-// return (
-//   movies.nowPlayingMovies && (
-//     <div className="bg-black">
-//       <div className=" mt-0 md:-mt-52 pl-4 md:pl-12 relative z-20">
-//         <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
-//         <MovieList title={"Trending"} movies={movies.nowPlayingMovies} />
-//         <MovieList title={"Popular"} movies={movies.popularMovies} />
-//         <MovieList
-//           title={"Upcoming Movies"}
-//           movies={movies.nowPlayingMovies}
-//         />
-//         <MovieList title={"Horror"} movies={movies.nowPlayingMovies} />
-//       </div>
-//     </div>
-//   )
-// );

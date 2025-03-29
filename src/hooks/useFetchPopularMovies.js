@@ -13,7 +13,6 @@ const useFetchPopularMovies = () => {
       TMDB_OPTIONS
     );
     const json = await data.json();
-    console.log(json.results);
     dispatch(addPopularmovies(json.results));
   };
 
