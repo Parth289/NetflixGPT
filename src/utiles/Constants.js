@@ -6,6 +6,17 @@ export const TMDB_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
+    //to keep this secure we have to keep this TMDB API key in .env file which will prevent to show on browser
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjM1MDQ1OTEyNDdkNjdlZTRhODJlMmI5Nzk3MzUyYSIsIm5iZiI6MTc0Mjk5Mzg0OC40Mywic3ViIjoiNjdlM2Y5Yjg3YjczMTNiNWFlZjBiMjc0Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.HkvjIwFpCNsC4ek02DTGyiLHVuR2-QgwLW563qWEgT4",
   },
 };
+
+export const LANGU_OPTIONS = [
+  { identifier: "en", language: "English" },
+  { identifier: "hindi", language: "Hindi" },
+  { identifier: "spanish", language: "Spanish" },
+  { identifier: "jap", language: "Japanese" },
+];
+
+//to keep this secure we have to keep this API key in .env file which will prevent to show on browser
+export const GEMINI_KEY = "AIzaSyBNs0slWADZlIp8-B3uW9W3FDrqehKFchU";

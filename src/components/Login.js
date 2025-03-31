@@ -7,8 +7,12 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
+import { useSelector } from "react-redux";
+import lang from "../utiles/LanguageKey";
 
 const Login = () => {
+  const value = useSelector((store) => store.config?.lang);
+
   const [signUp, setSignUp] = useState(true);
   const [error, setError] = useState(null);
 
@@ -80,12 +84,14 @@ const Login = () => {
   return (
     <div>
       <Header />
+      <div className="absolute">
       <img
-        className="absolute"
+        className="h-screen w-screen object-cover"
         src="https://assets.nflxext.com/ffe/siteui/vlv3/fc164b4b-f085-44ee-bb7f-ec7df8539eff/d23a1608-7d90-4da1-93d6-bae2fe60a69b/IN-en-20230814-popsignuptwoweeks-perspective_alpha_website_large.jpg"
         alt="logo"
       />
-      <div className="w-full md:w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
+      </div>
+      <div className="w-full md:w-3/12 absolute p-12 bg-black my-[8rem] mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <form
           onSubmit={(e) => {
             //to prevent form submit automatically because button inside form will submit it
@@ -93,40 +99,40 @@ const Login = () => {
           }}
         >
           <h1 className="font-bold text-3xl py-4">
-            {signUp ? "Sign Up" : "Login"}
+            {signUp ? lang[value].signUp : lang[value].login}
           </h1>
           {signUp && (
             <input
               ref={name}
               className="p-4 my-4 w-full bg-gray-700"
               type="text"
-              placeholder="Name"
+              placeholder= {lang[value].name}
             />
           )}
           <input
             ref={email}
             className="p-4 my-4 w-full bg-gray-700"
             type="text"
-            placeholder="Email"
+            placeholder= {lang[value].email}
           />
           <input
             ref={password}
             className="p-4 my-4 w-full bg-gray-700"
             type="password"
-            placeholder="Password"
+            placeholder={lang[value].password}
           />
           <p className="text-red-700">{error}</p>
           <button
             className="p-4 my-6 bg-red-700 w-full rounded-lg"
             onClick={submitForm}
           >
-            {signUp ? "Sign Up" : "Login"}
+            {signUp ? lang[value].signUp : lang[value].login}
           </button>
           <p className="py-4">
             <button onClick={toggleSignin}>
               {signUp
-                ? "Already registerd ? Login"
-                : "New to Netflix ? Sign Up"}
+                ? lang[value].alreadyRegistered + " " +lang[value].login
+                :  lang[value].signUp}
             </button>
           </p>
         </form>

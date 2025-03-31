@@ -24,7 +24,7 @@ const MovieCard = ({ card }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         ariaHideApp={false}
-        className="fixed inset-0 flex items-center justify-center z-50"
+        className="fixed inset-0 flex items-center justify-center z-40"
         overlayClassName="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-md"
       >
         <div className="relative bg-black text-white w-full max-w-2xl rounded-lg shadow-2xl border border-gray-900 animate-scale-in">

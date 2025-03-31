@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { TMDB_OPTIONS } from "../utiles/Constants";
 import { useDispatch } from "react-redux";
 import { addmovies } from "../utiles/movieDataSlice";
@@ -13,6 +13,8 @@ import useFetchUpcomingMovies from "../hooks/useFetchUpcomingMovies";
 import SearchGpt from "./Inside Browse/GPT/SearchGpt";
 
 const Browse = () => {
+  const [showSearchGpt, setShowSearchGpt] = useState(false);
+
   useFetchMovies();
   useFetchPopularMovies();
   useFetchTopRated();
@@ -20,10 +22,14 @@ const Browse = () => {
 
   return (
     <div>
-      <Header />
-      <MainContainer />
-      <SecondartContainer />
-      <SearchGpt />
+      <Header setShowSearchGpt={setShowSearchGpt} value={showSearchGpt} />
+      {showSearchGpt ? (
+        <SearchGpt />
+      ) : (
+        <>
+          <MainContainer /> <SecondartContainer />
+        </>
+      )}
     </div>
   );
 };

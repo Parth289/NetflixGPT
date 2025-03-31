@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { TMDB_OPTIONS } from "../utiles/Constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addmovies } from "../utiles/movieDataSlice";
 
 const useFetchMovies = () => {
   const dispatch = useDispatch();
+
+    //memoization
+    const isMovies = useSelector((store)=>store.movie.nowPlayingMoview)
 
   //fetch movies from TMDB and updating the store
   const getMovieData = async () => {
@@ -17,7 +20,7 @@ const useFetchMovies = () => {
   };
 
   useEffect(() => {
-    getMovieData();
+    !isMovies && getMovieData();
   }, []);
 };
 export default useFetchMovies;

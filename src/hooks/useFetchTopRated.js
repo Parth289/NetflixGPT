@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { TMDB_OPTIONS } from "../utiles/Constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPopularmovies, addTopRatedmovies } from "../utiles/movieDataSlice";
 
 const useFetchTopRated = () => {
   const dispatch = useDispatch();
+
+    //memoization
+    const isMovies = useSelector((store)=>store.movie.TopRatedMovie)
 
   //fetch movies from TMDB and updating the store
   const TopRated = async () => {
@@ -17,7 +20,7 @@ const useFetchTopRated = () => {
   };
 
   useEffect(() => {
-    TopRated();
+    !isMovies && TopRated();
   }, []);
 };
 export default useFetchTopRated;

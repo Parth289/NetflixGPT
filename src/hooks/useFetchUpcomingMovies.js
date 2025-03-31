@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { TMDB_OPTIONS } from "../utiles/Constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   addPopularmovies,
   addTopRatedmovies,
@@ -9,6 +9,9 @@ import {
 
 const useFetchUpcomingMovies = () => {
   const dispatch = useDispatch();
+
+    //memoization
+    const isMovies = useSelector((store)=>store.movie.UpcomingMovie)
 
   //fetch movies from TMDB and updating the store
   const UpcomingMovies = async () => {
@@ -21,7 +24,7 @@ const useFetchUpcomingMovies = () => {
   };
 
   useEffect(() => {
-    UpcomingMovies();
+    !isMovies && UpcomingMovies();
   }, []);
 };
 export default useFetchUpcomingMovies;
