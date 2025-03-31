@@ -53,7 +53,7 @@ const Header = ({ setShowSearchGpt, value }) => {
       <div
         className={`${
           menuOpen ? "flex" : "hidden"
-        } md:flex flex-col md:flex-row items-center md:space-x-6 bg-black md:bg-transparent p-4 md:p-0 absolute md:relative top-full left-0 w-full md:w-auto`}
+        } md:flex flex-col md:flex-row items-center md:space-x-6 bg-black bg-opacity-90 md:bg-transparent p-4 md:p-0 absolute md:relative top-full left-0 w-full md:w-auto`}
       >
         <select
           className="h-12 px-6 my-2 md:my-0 rounded-2xl bg-gray-500 text-white p-1 bg-opacity-50 cursor-pointer appearance-none"
