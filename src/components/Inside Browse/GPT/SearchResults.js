@@ -8,7 +8,7 @@ if(!movieName) return null
 
   return <div className="bg-black opacity-90 p-4 m-4">
     {movieName.map((movie,index)=> (
-        <MovieList title={movie} movies={movieResults[index]}/>
+        <MovieList key={movie} title={movie} movies={movieResults[index]}/>
         ))}
     </div>;
 };
