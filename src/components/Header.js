@@ -70,7 +70,10 @@ const Header = ({ setShowSearchGpt, value }) => {
           <>
             <button
               className="h-12 my-2 md:my-0 bg-gradient-to-r from-blue-600 to-purple-800 text-white px-6 rounded-xl shadow-xl hover:from-blue-700 hover:to-purple-900 transition-all"
-              onClick={() => setShowSearchGpt((prev) => !prev)}
+              onClick={() => {
+                setShowSearchGpt((prev) => !prev);
+                setMenuOpen(false); 
+              }}              
             >
               {!value ? langs[values].searchGPT : langs[values].homePage}
             </button>
