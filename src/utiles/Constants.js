@@ -19,4 +19,4 @@ export const LANGU_OPTIONS = [
 ];
 
 //to keep this secure we have to keep this API key in .env file which will prevent to show on browser
-export const GEMINI_KEY = "AIzaSyBNs0slWADZlIp8-B3uW9W3FDrqehKFchU";
+export const GEMINI_KEY = "";
